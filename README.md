@@ -1,8 +1,12 @@
 
 ## Agentic Architecture driving RWA tokenizzation of financial Insstuments
+Reference Implementation : Deep Reverse Supply chain Finance
 
 
-MCP Orchestrator 
+### Predictable and small proof sizes for deep offchain processes verified onchain
+
+
+## MCP Orchestrator 
 
 ## Related repositories "
 
@@ -26,7 +30,11 @@ ZK-PRET ( chainaim Proof Engine for Tokenization )
          
          Financial Risk Proves - Bsed on simualtions on ACTUS financial framework used by central banks for systemic risk 
   
-  
+
+
+  ## Those  proofs injected in to the ERC 6960 metadata 
+
+ 
 
 
 ## 🛠️ Install Dependencies
