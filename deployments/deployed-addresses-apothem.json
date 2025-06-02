@@ -1,0 +1,12 @@
+{
+  "baseAsset": "0x8A3a86d55b3F57b4Be9ce0113e09d0B9f7b12771",
+  "network": "apothem",
+  "deployer": "0xDED1A2A74a5C0512A98dA8d6bD4B9E51C318084e",
+  "deployedAt": "2025-05-30T20:40:41.584Z",
+  "feeManager": "0x31dDa0071Da559E4189C6Beb11eca942cB0350BE",
+  "wrappedAsset": "0x92F5a2bD28CCB184af7874e1707ABc7a7df45075",
+  "invoiceAssetImpl": "0xdD089b6Fd8176292e7C5Be47ED62294E63c5BD55",
+  "timestamp": "2025-05-30T21:43:28.520Z",
+  "propertyAssetImpl": "0x3FFafb9aa7031270a6B6084c62ad5B5177214A2E",
+  "marketplace": "0x0d1Aa18eFa38eE8c3d32A84b9D452EAf4E3D571d"
+}

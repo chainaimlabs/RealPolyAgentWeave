@@ -1,0 +1,24 @@
+{
+  "contractName": "FeeManager",
+  "network": "apothem",
+  "chainId": "51",
+  "contractAddress": "0xBCD8b887632fD6ab4056DCa36f3986A750cD5BDB",
+  "deployer": "0xDED1A2A74a5C0512A98dA8d6bD4B9E51C318084e",
+  "transactionHash": "0x50fa72aec7c31cd227120ddd73194bf6bf60cef08743e2d22d81444a672e3015",
+  "deploymentTime": "2025-05-30T20:06:55.363Z",
+  "parameters": {
+    "defaultInitialFee": "250",
+    "defaultBuyingFee": "150",
+    "feeWallet": "0xDED1A2A74a5C0512A98dA8d6bD4B9E51C318084e"
+  },
+  "gas": {
+    "gasUsed": "8000000",
+    "gasPrice": "15000000000",
+    "deploymentCost": "120000000000000000",
+    "deploymentCostFormatted": "0.12 XDC"
+  },
+  "explorerUrls": {
+    "contract": "https://testnet.xdcscan.com/address/0xBCD8b887632fD6ab4056DCa36f3986A750cD5BDB",
+    "transaction": "https://testnet.xdcscan.com/tx/0x50fa72aec7c31cd227120ddd73194bf6bf60cef08743e2d22d81444a672e3015"
+  }
+}

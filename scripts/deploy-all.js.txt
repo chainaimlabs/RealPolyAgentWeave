@@ -1,0 +1,35 @@
+/ ================================================================
+
+// scripts/deploy-all.js - Master deployment script
+async function main() {
+  console.log("Starting full Polytrade ecosystem deployment...\n");
+  
+  // Deploy in sequence
+  console.log("1/6 Deploying BaseAsset...");
+  await require('./01-deploy-base-asset.js');
+  
+  console.log("\n2/6 Deploying FeeManager...");
+  await require('./02-deploy-fee-manager.js');
+  
+  console.log("\n3/6 Deploying WrappedAsset...");
+  await require('./03-deploy-wrapped-asset.js');
+  
+  console.log("\n4/6 Deploying InvoiceAsset...");
+  await require('./04-deploy-invoice-asset.js');
+  
+  console.log("\n5/6 Deploying PropertyAsset...");
+  await require('./05-deploy-property-asset.js');
+  
+  console.log("\n6/6 Deploying Marketplace...");
+  await require('./06-deploy-marketplace.js');
+  
+  console.log("\n🎉 ALL CONTRACTS DEPLOYED SUCCESSFULLY!");
+}
+
+// Uncomment to use master script
+// main()
+//   .then(() => process.exit(0))
+//   .catch((error) => {
+//     console.error(error);
+//     process.exit(1);
+//   });

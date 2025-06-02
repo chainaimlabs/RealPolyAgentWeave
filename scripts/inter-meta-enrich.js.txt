@@ -1,0 +1,88 @@
+// Enhanced Polytrade Script with Compliance Metadata
+
+// Add this after STEP 5 (before wrapping):
+
+// STEP 5.5: GENERATE COMPLIANCE METADATA FOR ERC6960 TOKENS
+console.log("\n🔍 STEP 5.5: GENERATING COMPLIANCE METADATA");
+console.log("==================================================");
+
+async function generateComplianceMetadata(tokenId, companyName) {
+  // Generate rich compliance metadata for ERC6960 tokens
+  const complianceData = {
+    name: `Compliance-Verified Asset Fraction #${tokenId}`,
+    description: `Fractional ownership of compliance-verified digital asset for ${companyName}`,
+    image: `https://api.canft4.com/compliance/images/${tokenId}.png`,
+    external_url: `https://canft4.com/compliance/fractions/${tokenId}`,
+    
+    attributes: [
+      {"trait_type": "Original_NFT_ID", "value": tokenId},
+      {"trait_type": "Company_Name", "value": companyName},
+      {"trait_type": "Total_Fractions", "value": ethers.formatEther(FRACTIONS)},
+      {"trait_type": "Verification_Date", "value": new Date().toISOString().split('T')[0]},
+      
+      // Compliance attributes (run actual verifications here)
+      {"trait_type": "isGLEIFCompliant", "value": true, "verifier": "0x742d35Cc..."},
+      {"trait_type": "isEXIMCompliant", "value": true, "verifier": "0x9f4B3577..."},
+      {"trait_type": "isBLStandardsCompliant", "value": true, "verifier": "0xA8E6D4B2..."},
+      {"trait_type": "isBLReconciledWith3WMatching", "value": true, "verifier": "0xD2F8B4A6..."}
+    ],
+    
+    compliance_summary: {
+      overall_status: true,
+      total_verifications: 4,
+      verified_at: new Date().toISOString()
+    },
+    
+    original_nft: {
+      contract: contracts.nft,
+      token_id: tokenId,
+      metadata_uri: "https://CANFT4.com" // Reference to original
+    }
+  };
+  
+  return complianceData;
+}
+
+const companyName = process.env.COMPANY_NAME || "SREE PALANI ANDAVAR AGROS PRIVATE LIMITED";
+const complianceMetadata = await generateComplianceMetadata(TOKEN_ID, companyName);
+
+// Save metadata to IPFS/server
+const metadataURI = await saveComplianceMetadata(complianceMetadata, TOKEN_ID);
+console.log(`✅ Compliance metadata generated: ${metadataURI}`);
+
+// MODIFIED STEP 6: WRAP NFT WITH COMPLIANCE METADATA
+console.log("\n🎁 STEP 6: WRAPPING NFT WITH COMPLIANCE METADATA");
+console.log("==================================================");
+
+try {
+  console.log(`Wrapping NFT Token ${TOKEN_ID} into ${ethers.formatEther(FRACTIONS)} compliance-verified ERC6960 fractions...`);
+  
+  // Use enhanced wrapping function
+  const wrapTx = await wrappedAssetWithOwner.wrapERC721WithMetadata(
+    contracts.nft,
+    TOKEN_ID,
+    FRACTIONS,
+    metadataURI  // NEW: Compliance metadata URI
+  );
+  
+  console.log(`🔄 Transaction submitted: ${wrapTx.hash}`);
+  const receipt = await wrapTx.wait();
+  console.log(`✅ NFT wrapped with compliance metadata!`);
+  console.log(`📊 Gas used: ${receipt.gasUsed}`);
+  
+} catch (error) {
+  console.log(`❌ Enhanced wrapping failed: ${error.message}`);
+  return;
+}
+
+async function saveComplianceMetadata(metadata, tokenId) {
+  // Save to your server/IPFS
+  const response = await fetch('https://api.canft4.com/compliance/metadata', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({tokenId, metadata})
+  });
+  
+  const result = await response.json();
+  return result.metadataURI; // Returns: https://api.canft4.com/compliance/metadata/5.json
+}

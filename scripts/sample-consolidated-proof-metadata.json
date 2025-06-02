@@ -1,0 +1,39 @@
+{
+  "verification_type": "GLEIF",
+  "token_id": 5,
+  "erc6960_main_id": "0x1234567890abcdef...",
+  "timestamp": "2024-06-01T10:30:00.000Z",
+  "verifier_address": "0x742d35Cc6634C0532925a3b8D44a3Fab12345678",
+  "verification_status": true,
+  "transaction_hash": "0xabcd1234567890abcdef1234567890abcdef1234567890abcdef1234567890ab",
+  
+  "company_data": {
+    "name": "SREE PALANI ANDAVAR AGROS PRIVATE LIMITED",
+    "lei": "LEI123456789012345678",
+    "status": "ACTIVE",
+    "registration_country": "IN",
+    "verification_level": "Level 1"
+  },
+  
+  "verification_details": {
+    "data_source": "GLEIF Database",
+    "api_endpoint": "https://api.gleif.org/api/v1/lei-records",
+    "query_timestamp": "2024-06-01T10:29:45.123Z",
+    "response_hash": "0xabcdef1234567890...",
+    "confidence_score": 0.98
+  },
+  
+  "cryptographic_proofs": {
+    "data_signature": "0x1234567890abcdef...",
+    "merkle_root": "0xfedcba0987654321...",
+    "proof_hash": "0x9876543210fedcba...",
+    "verifier_signature": "0xabcdef0123456789..."
+  },
+  
+  "metadata": {
+    "verification_method": "API + Blockchain Verification",
+    "standard_compliance": "ERC-721 + Custom Compliance Extension",
+    "data_retention_period": "7 years",
+    "next_verification_due": "2025-06-01"
+  }
+}
