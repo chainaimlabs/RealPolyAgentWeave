@@ -83,8 +83,6 @@ User Interaction :
  ## Video 
 
 https://www.youtube.com/watch?v=xX5sMMFq1XE&t=8s
-![rp-ss--minting details27](https://github.com/user-attachments/assets/269c06f2-6e24-401d-9260-3f0529a08d9c)
-
 
  ## Presentation 
  
