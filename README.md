@@ -1,6 +1,6 @@
 
-## Agentic Architecture driving RWA tokenizzation of financial Insstuments
-Reference Implementation : Deep Reverse Supply chain Finance
+## Agentic Architecture driving RWA tokenization of financial Instruments.
+### Reference Implementation : Deep Reverse Supply chain Finance
 
 
 ### Predictable and small proof sizes for deep offchain processes verified onchain
